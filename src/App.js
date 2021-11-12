@@ -2,6 +2,7 @@ import './App.css';
 import { Button, ListGroup } from 'react-bootstrap';
 import React, { useState } from 'react';
 import FileSaver from 'file-saver';
+const ipServer = "http://127.0.0.1:5000/"
 
 function App() {
   const [integer, setInteger] = useState(0);
@@ -11,7 +12,7 @@ function App() {
   const [link, setLink] = useState("");
   const generate = ( async () =>{
 
-    fetch("http://127.0.0.1:5000/generate", {
+    fetch(ipServer+"generate", {
 
     }).then(response => 
       response.json()).then(data => {
@@ -22,7 +23,7 @@ function App() {
   })
 
   const download = ( async () => {
-    fetch("http://127.0.0.1:5000/download").then(response => {
+    fetch(ipServer+"download").then(response => {
     console.log(response.text); 
     console.log(response.blob);
       return response.blob();
@@ -35,7 +36,7 @@ function App() {
     }
   )
   const report = ( async() => {
-    fetch("http://127.0.0.1:5000/report").then(response => 
+    fetch(ipServer+"report").then(response => 
     response.json()).then(data => {
       console.log(data)
       setInteger(data.integer);

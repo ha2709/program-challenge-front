@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 Please run:
+ - git clone https://github.com/ha2709/program-challenge-front.git
+ - chmod -R 777 ./
+ - cd program-challenge-front
  - npm install 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
